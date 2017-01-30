@@ -47,7 +47,6 @@ def eliminate_naked_twins(values, twins, unitlist):
     # Find for every unit, whether there are 'twins' occurences
     for unit in unitlist:
 
-        
         for i in range(0, len(unit)):
             box1 = unit[i]
             box1_value = values[box1]
@@ -170,6 +169,13 @@ def reduce_puzzle(values):
         values = only_choice(values)
         solved_values_after = len([box for box in values.keys() if len(values[box]) == 1])
         stalled = solved_values_before == solved_values_after
+        
+        # If the simple strategies do not complete the board, then run naked twins
+        if stalled:
+            values = naked_twins(values)
+            solved_values_after = len([box for box in values.keys() if len(values[box]) == 1])
+            stalled = solved_values_before == solved_values_after
+
         if len([box for box in values.keys() if len(values[box]) == 0]):
             return False
     return values
