@@ -3,11 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: Constraint propogation is utilized in solving the naked twins problem, by adding new constraints that the variables must satisfy. For example, one condition that the AI agent must satisfy, is the fact that if there are 2 boxes with identical possible value pairs (e.g. 23 & 23 within the same square unit) in them, then all peer units that are connected to those twin pairs, will definitely not contain either one of thsoe values. This leads to simplification of harder sudoku problems, byt eliminating more 'possible' values after simple 'elimination' and 'only choice' strategies.
+A: Constraint propogation is utilized in solving the naked twins problem, by adding new constraints that the variables must satisfy. For example, one condition that the AI agent must satisfy, is the fact that if there are 2 boxes with identical possible value pairs (e.g. 23 & 23 within the same square unit) in them, then all peer units that are connected to those twin pairs, will definitely not contain either one of thsoe values. This leads to simplification of harder sudoku problems, by eliminating more 'possible' values after simple 'elimination', 'only choice', and 'search' strategies can the reduce the board to.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: Similiar to question one, but in this scenary we added new domain variables containing additional unit sets to contrain by. For example, instead of having to have number 1-9 in each row, column, and 3x3 square, the program is also constrained by having to successfully have all 1-9 numbers in a diagonal across the baord in the following boxe indices (A1, B2, .., I9 and A9, B8 .., I1). Therefore 2 more units were added to the list of units.
+A: Similiar to question one, but in this scenario we add new domain variables containing additional unit sets to contrain the program by. For example, instead of having to have number 1-9 in each row, column, and 3x3 square, the program is also constrained by having to successfully have all 1-9 numbers in a diagonal across the board in the following box indices (A1, B2, .., I9 and A9, B8 .., I1). Therefore 2 more units were added to the list of units to also confirm when new numbers were place on the board, they abide by the diagonal rules.
 
 ### Install
 
